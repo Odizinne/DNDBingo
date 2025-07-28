@@ -13,6 +13,8 @@ Item {
 
     signal clicked()
 
+    opacity: 0
+
     // Transform origin at center for smooth rotation
     transformOrigin: Item.Center
 
