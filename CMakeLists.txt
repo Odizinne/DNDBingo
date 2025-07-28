@@ -14,23 +14,22 @@ qt_standard_project_setup(REQUIRES 6.8)
 
 set(SOURCES
     src/main.cpp
+    src/cardmanager.cpp
 )
 
-#set(HEADERS
-#    include/imageexporter.h
-#    include/filehandler.h
-#    include/fontmanager.h
-#)
+set(HEADERS
+    include/cardmanager.h
+)
 
 set(QML_FILES
     qml/Main.qml
+    qml/Card.qml
+    qml/BingoGrid.qml
 )
 
-#set(QML_SINGLETONS
-#    qml/Singletons/UserSettings.qml
-#    qml/Singletons/Constants.qml
-#    qml/Singletons/Colors.qml
-#)
+set(QML_SINGLETONS
+    qml/Singletons/UserSettings.qml
+)
 
 set_source_files_properties(${QML_SINGLETONS}
     PROPERTIES QT_QML_SINGLETON_TYPE TRUE
@@ -38,9 +37,10 @@ set_source_files_properties(${QML_SINGLETONS}
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
     ${SOURCES}
-    #${HEADERS}
+    ${HEADERS}
     resources/fonts/fonts.qrc
     resources/icons/icons.qrc
+    resources/cards/cards.qrc
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -50,7 +50,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 qt_add_qml_module(${CMAKE_PROJECT_NAME}
     URI Odizinne.DNDBingo
     VERSION 1.0
-    QML_FILES ${QML_FILES} #${QML_SINGLETONS}
+    QML_FILES ${QML_FILES} ${QML_SINGLETONS}
 )
 
 # WebAssembly specific settings
@@ -66,7 +66,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Emscripten")
         "-sALLOW_MEMORY_GROWTH=1"
         "-sFILESYSTEM=1"
         "-sEXPORTED_RUNTIME_METHODS=['FS','stringToUTF8','lengthBytesUTF8']"
-        "-sEXPORTED_FUNCTIONS=['_main','_fileSelectedCallback','_layerImageSelectedCallback','_saveFileSelectedCallback','_fontSelectedCallback','_malloc','_free']"
+        "-sEXPORTED_FUNCTIONS=['_main','_malloc','_free']"
     )
 else()
     # Native platforms only

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/cards">
+        <!-- Add your card images here. For now, I'll add some placeholders -->
+        <!-- When you want to add cards, just drop image files in resources/cards/ -->
+        <!-- and add them here like: -->
+        <!-- <file>dragon.png</file> -->
+        <!-- <file>goblin.jpg</file> -->
+        <!-- <file>wizard.png</file> -->
+        <!-- etc. -->
+        <file>card1.jpg</file>
+        <file>card2.png</file>
+    </qresource>
+</RCC>
