@@ -79,10 +79,16 @@ Item {
     }
 
     function animateCardsIn() {
+        let layout = calculateGridLayout()
+
         // Position cards in circle and make them invisible
         for (let i = 0; i < 25; i++) {
             let card = repeater.itemAt(i)
             if (card) {
+                // Ensure consistent size for positioning
+                card.width = layout.cellSize
+                card.height = layout.cellSize
+
                 let angle = (i / 25) * Math.PI * 2
                 let radius = Math.min(root.width, root.height) * 0.35
                 let centerX = root.width / 2
