@@ -7,7 +7,30 @@
         <!-- <file>goblin.jpg</file> -->
         <!-- <file>wizard.png</file> -->
         <!-- etc. -->
-        <file>card1.jpg</file>
-        <file>card2.png</file>
+        <file>0pv.jpg</file>
+        <file>20.jpg</file>
+        <file>adopt.jpg</file>
+        <file>arcane.jpg</file>
+        <file>CC.jpg</file>
+        <file>chaos.jpg</file>
+        <file>dicefell.jpg</file>
+        <file>edoh.jpg</file>
+        <file>ego.jpg</file>
+        <file>feu.jpg</file>
+        <file>ghost.jpg</file>
+        <file>gold.jpg</file>
+        <file>init.jpg</file>
+        <file>LOVE.jpg</file>
+        <file>mouth.jpg</file>
+        <file>oublie.jpg</file>
+        <file>percep.jpg</file>
+        <file>portal.jpg</file>
+        <file>queen.jpg</file>
+        <file>racist.jpg</file>
+        <file>repos.jpg</file>
+        <file>song.jpg</file>
+        <file>tired.jpg</file>
+        <file>up.jpg</file>
+        <file>voleur.png</file>
     </qresource>
 </RCC>
